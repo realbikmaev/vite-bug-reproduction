@@ -1,38 +1,16 @@
-# create-svelte
+# description of the bug
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+svelte-preprocess vite integration can't track changes in font-face at rules added through tailwindcss plugin
 
-## Creating a project
+only changes to `tailwind.config.js` or `app.postcss` trigger a page reload that is needed to update fonts on the page
 
-If you're seeing this, you've probably already done this step. Congrats!
+# steps to reproduce
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+1. clone this repo
+2. `npm install`
+3. `npm run dev`
+4. open `localhost:8000` in browser
+5. change `font-BarlowSemiCondensed-800-i` to `font-BarlowSemiCondensed-100` and hit <kbd>CMD</kbd> + <kbd>S</kbd>
+6. observe that font on the page didn't change
+7. go to `app.postcss` and hit <kbd>CMD</kbd> + <kbd>S</kbd> again
+8. observe that font on the page did change
