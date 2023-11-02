@@ -9,7 +9,7 @@ only changes to `tailwind.config.js` or `app.postcss` trigger a page reload that
 1. clone this repo
 2. `npm install`
 3. `npm run dev`
-4. open `localhost:8000` in browser
+4. open [`localhost:8000`](https://localhost:8000) in your browser
 5. change `font-BarlowSemiCondensed-800-i` to `font-BarlowSemiCondensed-100` and hit <kbd>CMD</kbd> + <kbd>S</kbd>
 6. observe that font on the page didn't change
 7. go to `app.postcss` and hit <kbd>CMD</kbd> + <kbd>S</kbd> again
